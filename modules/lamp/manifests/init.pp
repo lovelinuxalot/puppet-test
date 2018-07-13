@@ -4,7 +4,7 @@ class lamp {
   $rdsdb = 'webserver'
   $rdsuser = 'webserveruser'
   $rdspass = 'w3b$erv3r1243'
-  
+
   # execute 'apt-get update'
   exec { 'apt-update':                    # exec resource named 'apt-update'
     command => '/usr/bin/apt-get update'  # command this resource will run
@@ -17,7 +17,7 @@ class lamp {
   }
 
   # install all packages
-  package { ['libapache2-mod-php','php','php-mysql','libapache2-modsecurity']:
+  package { ['libapache2-mod-php','php','php-mysql','php-mcrypt','libapache2-modsecurity']:
     require => Package['apache2'],        # require 'apt-update' before installing
     ensure => installed,
   }
@@ -50,8 +50,8 @@ class lamp {
     require => Package['apache2'],        # require 'apache2' package before creating
   }
 
-  file { '/var/www/html/index.html':
-    content => template('lamp/index.html.erb'),
+  file { '/var/www/html/index.php':
+    content => template('lamp/index.php.erb'),
     owner   => www-data,
     group   => www-data,
     mode    => 644,
