@@ -1,5 +1,6 @@
 class master {
 
+  $masterip = '10.100.10.78'
   $rootuser = 'root'
   $rootpass = 'root'
 
@@ -26,13 +27,9 @@ class master {
   }
 
   file { 'master-sql':
-    path    => '/tmp/master.sql',
+    path    => '/etc/mysql/mysql.conf.d/mysqld.cnf',
     ensure  => file,
-    source  => 'puppet:///modules/master/master.sql',
-  }
-
-  exec { 'run-sql':
-    command => '/usr/bin/mysql < /tmp/master.sql'
+    source  => 'puppet:///modules/master/mysqld.cnf',
     notify  => Service['mysql'],
   }
 

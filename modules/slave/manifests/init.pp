@@ -1,5 +1,6 @@
 class slave {
 
+  $slaveip = '10.100.10.10'
   $rootuser = 'root'
   $rootpass = 'root'
 
@@ -22,6 +23,13 @@ class slave {
     owner   => root,
     group   => root,
     mode    => 644,
+    notify  => Service['mysql'],
+  }
+
+  file { 'slave-sql':
+    path    => '/etc/mysql/mysql.conf.d/mysqld.cnf',
+    ensure  => file,
+    source  => 'puppet:///modules/slave/mysqld.cnf',
     notify  => Service['mysql'],
   }
 }

@@ -43,7 +43,6 @@ class lamp {
     require => Package['apache2'],
   }
 
-  # ensure info.php file exists
   file { '/var/www/html/dbcheck.php':
     content => template('lamp/dbcheck.php.erb'),
     owner   => www-data,
@@ -57,5 +56,9 @@ class lamp {
     group   => www-data,
     mode    => 644,
 }
+
+  exec { 'remove index.html':
+    command => '/bin/rm /var/www/html/index.html'  
+  }
 
 }
