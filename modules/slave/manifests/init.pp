@@ -1,6 +1,6 @@
 class slave {
 
-  $slaveip = '10.100.10.10'
+  $slaveip = '10.100.40.251'
   $rootuser = 'root'
   $rootpass = 'root'
 

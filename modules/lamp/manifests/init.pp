@@ -1,6 +1,6 @@
 class lamp {
 
-  $rdsname = '10.100.40.78'
+  $rdsname = '10.100.30.14'
   $rdsdb = 'webserver'
   $rdsuser = 'webserveruser'
   $rdspass = 'weBs3rv3rU$er'
@@ -58,7 +58,7 @@ class lamp {
 }
 
   exec { 'remove index.html':
-    command => '/bin/rm /var/www/html/index.html'  
+    command => '/bin/rm /var/www/html/index.html'
   }
 
 }
