@@ -1,6 +1,6 @@
 class master {
 
-  $masterip = '10.100.30.14'
+  $masterip = '10.100.40.118'
   $rootuser = 'root'
   $rootpass = 'root'
 

@@ -1,6 +1,6 @@
 class lamp {
 
-  $rdsname = '10.100.30.14'
+  $rdsname = '10.100.40.118'
   $rdsdb = 'webserver'
   $rdsuser = 'webserveruser'
   $rdspass = 'weBs3rv3rU$er'
