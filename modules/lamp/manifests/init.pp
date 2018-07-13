@@ -1,9 +1,9 @@
 class lamp {
 
-  $rdsname = 'sretestdb.olxtest.com'
+  $rdsname = '10.100.40.78'
   $rdsdb = 'webserver'
   $rdsuser = 'webserveruser'
-  $rdspass = 'w3b$erv3r1243'
+  $rdspass = 'weBs3rv3rU$er'
 
   # execute 'apt-get update'
   exec { 'apt-update':                    # exec resource named 'apt-update'
