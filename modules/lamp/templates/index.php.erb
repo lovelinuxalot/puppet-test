@@ -14,9 +14,11 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 else { ?>
-  <h2> "Your IP address is <?php echo gethostname(); ?>" </h2>
-
+  <h3> Database connection Successfull </h3>
 <?php }
+?>
+<h2> "Your IP address is <?php echo gethostname(); ?>" </h2>
+<?php
 $conn->close();
 ?>
 </body></html>
