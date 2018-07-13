@@ -44,10 +44,11 @@ class lamp {
   }
 
   # ensure info.php file exists
-  file { '/var/www/html/info.php':
-    ensure => file,
-    content => '<?php  phpinfo(); ?>',    # phpinfo code
-    require => Package['apache2'],        # require 'apache2' package before creating
+  file { '/var/www/html/dbcheck.php':
+    content => template('lamp/dbcheck.php.erb'),
+    owner   => www-data,
+    group   => www-data,
+    mode    => 644,
   }
 
   file { '/var/www/html/index.php':
